@@ -36,9 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       localStorage.setItem("baseUrl","https://sondheim.braze.com");
       localStorage.setItem("api_key","598d07ff-8d77-424c-a366-3f495bae886d")
     } 
-      // if you use Content Cards
-    braze.subscribeToContentCardsUpdates(function (updates) {
-      // cards have been updated
+    
       BCards = updates.cards;
       let render = false;
       //do something with the latest instance of 'cards'
@@ -154,7 +152,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       
       SlideShow(1);
-      });
 
 
   </script>
