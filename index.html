@@ -22,7 +22,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
   <link href="./css/main.css" rel="stylesheet" />
-
+  <script type="text/javascript">
+        // forward/Back controls
+      function plusSlides(n) {
+        SlideShow(slidePosition);
+      }
+  
+      function minusSlides(n) {
+        SlideShow(slidePosition - 1);
+      }
+  
+      //  images controls
+      function currentSlide(n) {
+        SlideShow(slidePosition = n);
+      }
+  
+      function SlideShow(n) {
+        var i;
+        var slides = document.getElementsByClassName("Containers");
+        //var circles = document.getElementsByClassName("dots");
+        if (n > slides.length) { slidePosition = 1 }
+        if (n < 1) { slidePosition = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        //for (i = 0; i < circles.length; i++) {
+        //    circles[i].className = circles[i].className.replace(" enable", "");
+        //}
+        slides[slidePosition - 1].style.display = "block";
+        //circles[slidePosition-1].className += " enable";
+  
+  
+      }
+  
+      function SlideShow() {
+        var i;
+        var slides = document.getElementsByClassName("Containers");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slidePosition++;
+        if (slidePosition > slides.length) { slidePosition = 1 }
+        slides[slidePosition - 1].style.display = "block";
+        //setTimeout(SlideShow, 20000); // Change image every 2 seconds
+      }
+  
+      var slidePosition = 1;
+  </script>
   <script type="text/javascript">
 
       //This will be invoked every time the feed is successfully refreshed following a requestContentCardsRefresh() request
@@ -163,53 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <script>
-        // forward/Back controls
-      function plusSlides(n) {
-        SlideShow(slidePosition);
-      }
   
-      function minusSlides(n) {
-        SlideShow(slidePosition - 1);
-      }
-  
-      //  images controls
-      function currentSlide(n) {
-        SlideShow(slidePosition = n);
-      }
-  
-      function SlideShow(n) {
-        var i;
-        var slides = document.getElementsByClassName("Containers");
-        //var circles = document.getElementsByClassName("dots");
-        if (n > slides.length) { slidePosition = 1 }
-        if (n < 1) { slidePosition = slides.length }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        //for (i = 0; i < circles.length; i++) {
-        //    circles[i].className = circles[i].className.replace(" enable", "");
-        //}
-        slides[slidePosition - 1].style.display = "block";
-        //circles[slidePosition-1].className += " enable";
-  
-  
-      }
-  
-      function SlideShow() {
-        var i;
-        var slides = document.getElementsByClassName("Containers");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slidePosition++;
-        if (slidePosition > slides.length) { slidePosition = 1 }
-        slides[slidePosition - 1].style.display = "block";
-        //setTimeout(SlideShow, 20000); // Change image every 2 seconds
-      }
-  
-      var slidePosition = 1;
-  </script>
 
 
 </body>
